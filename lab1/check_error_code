@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# check_error_code
+# this checks the assembler agains a series of faulty assembly codes and
+# check the error code returned by the assembler. 
+# the files under test/fails are all named as
+#  [description of error]_errN.asm
+# where N represents the error code
+
+for f in $(ls test/fails)
+do
+    bf=`basename $f .asm`
+    
+    # extract the error code number as the last character in file name string
+    errnum=`expr substr $bf $(expr length $bf) 1`
+    ./assemble test/fails/$f t/t.obj
+    stat=$?
+    if [ $stat -ne $errnum ]
+    then
+	printf "%s: \texpected errcode %d, instead returned %d\n" $f $errnum $stat
+    fi
+done
+
+echo "done"
