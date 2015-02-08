@@ -1,0 +1,44 @@
+#!/usr/bin/expect -f
+
+set code [lindex $argv 0]
+
+spawn ./std_sim ucode6 $code
+
+expect "LC-3b-SIM>"
+send "idump\n"
+
+while 1 {
+ 	expect "Current*>" {
+				send "run 1\n"
+			} "halted*>" {
+				send "idump\n"
+				expect "LC-3b-SIM>"
+				send "quit\n"
+				break
+			} "Simulating*>" {
+				send  "idump\n"
+			}
+}
+
+exec mv dumpsim temp_dumpsim_std
+
+spawn ./lc3bsim6 ucode6 $code
+
+expect "LC-3b-SIM>"
+send "idump\n"
+
+while 1 {
+ 	expect "Current*>" {
+				send "run 1\n"
+			} "halted*>" {
+				send "idump\n"
+				expect "LC-3b-SIM>"
+				send "quit\n"
+				break
+			} "Simulating*>" {
+				send  "idump\n"
+			}
+}
+
+exec mv dumpsim temp_dumpsim_my
+exec meld temp_dumpsim_std temp_dumpsim_my &

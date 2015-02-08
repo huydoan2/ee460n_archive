@@ -1,0 +1,34 @@
+	.orig x3000
+	add r0, r0, #-16
+	add r0, r0, #-15
+	add r0, r0, #-14
+	add r0, r0, #-13
+	add r0, r0, #-12
+	add r0, r0, #-11
+	add r0, r0, #-10
+	add r0, r0, #-9
+	add r0, r0, #-8
+	add r0, r0, #-7
+	add r0, r0, #-6
+	add r0, r0, #-5
+	add r0, r0, #-4
+	add r0, r0, #-3
+	add r0, r0, #-2
+	add r0, r0, #-1
+	add r0, r0, #0
+	add r0, r0, #1
+	add r0, r0, #2
+	add r0, r0, #3
+	add r0, r0, #4
+	add r0, r0, #5
+	add r0, r0, #6
+	add r0, r0, #7
+	add r0, r0, #8
+	add r0, r0, #9
+	add r0, r0, #10
+	add r0, r0, #11
+	add r0, r0, #12
+	add r0, r0, #13
+	add r0, r0, #14
+	add r0, r0, #15
+	.end

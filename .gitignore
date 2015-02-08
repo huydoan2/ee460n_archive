@@ -1,0 +1,19 @@
+# documentations
+*.pdf
+
+# executables
+bin/
+
+# temporary file created by assembler
+*.obj 
+*.hex
+
+# temporary file associated with lab 3-6
+dump/
+timeline
+dumpsim
+ucode3
+ucode4
+ucode5
+*.xls
+*.xlsx

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./debug ucode5 prog/pt $*

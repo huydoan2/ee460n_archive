@@ -1,0 +1,5 @@
+ #!/bin/bash
+dir=$1
+filenames=${@:2}
+
+rsync -i --chmod=u+rwx,g+r,o+r $filenames yhuang1@mario.ece.utexas.edu:~/EE460N/$dir

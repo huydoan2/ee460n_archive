@@ -1,0 +1,22 @@
+; convert LC3 string to LC3b format
+
+		.ORIG x3000
+		LEA R0, INSTR
+		LDW R0, R0, #0  ; R0=x4000
+		LDW R0, R0, #0
+		LEA R1, OUTSTR
+		LDW R1, R1, #0  ; R1=x4002
+		LDW R1, R1, #0
+LOOP	LDW R2, R0, #0
+		BRZ DONE
+		;RSHFL R2, R2, #8
+		STB R2, R1, #0
+		ADD R0, R0, #2
+		ADD R1, R1, #1
+		BR LOOP
+DONE	STB R2, R1, #0  ; R2=x0000
+		HALT
+		
+INSTR   	.FILL x4000
+OUTSTR  	.FILL x4002
+		.END

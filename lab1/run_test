@@ -1,0 +1,15 @@
+#!/bin/bash
+
+for f in $(ls t/fails)
+do
+    bf=`basename $f .asm`
+	num=`expr substr $bf $(expr length $bf) 1`
+	./assemble t/fails/$f t/t.obj
+	stat=$?
+	if [ $stat -ne $num ]
+	then
+	    printf "%s: \texpected errcode %d, instead returned %d\n" $f $num $stat
+	fi
+done
+
+echo "done"

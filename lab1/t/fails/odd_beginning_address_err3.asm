@@ -1,0 +1,3 @@
+	.ORIG x3001
+	ADD R0, R0, #5
+	HALT
