@@ -1,8 +1,8 @@
 GCC=gcc
 CFLAGS=-ansi
-MAIN=lc3bsim4.c 
-DEBUG=$(MAIN:.c=_debug.c)
-OUTPUT=lc3bsim4
+MAIN   =lc3bsim4.c 
+DEBUG  =$(MAIN:.c=_debug.c)
+OUTPUT =$(MAIN:.c=)
 DEBUG_OUTPUT=debug
 
 all:
