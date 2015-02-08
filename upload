@@ -2,4 +2,8 @@
 dir=$1
 filenames=${@:2}
 
-rsync -i --chmod=u+rwx,g+r,o+r $filenames yhuang1@mario.ece.utexas.edu:~/EE460N/$dir
+username   = what1234    # your UT EID
+server     = mario       # alternative see: http://www.ece.utexas.edu/it/remote-linux
+foldername = EE460N
+
+rsync -i --chmod=u+rwx,g+r,o+r $filenames $username@$server.ece.utexas.edu:~/$folder/$dir

@@ -14,9 +14,11 @@ The lab assignments should be programmed in **ANSI C** standard.
 
 ## File Organization, and how to use the archive
 ### ./
-`ansify.py` is a help scripts that converts the non-ANSI `// comment` into ANSI compliant `/* comment */`.
+`ansify.py` is a help script that converts the non-ANSI `// comment` into ANSI compliant `/* comment */`.
 
 `csv2ucode.py` is a help script that converts the `control_store.csv` in lab 3-6 into useable *ucode* file. The script omits the first line (header) and converts each line in a csv file to a string of 0 and 1. This removes human error from the making of ucode file. However the code is not as general as it can be, and only scans for 24 columns. If you are adding more column to the csv file. You must edit the code to reflect that change.
+
+`upload` is a one-liner help script that uploads the file to the UT ECE remote server. You need to edit it with your own username and set up the corresponding folder in the server for it to work.
 
 ### ./lab1
 The `makefile` should be self-explanatory. The `check_error_code` script runs the built program `assemble` against a series of faulty assemby code files and check the error code that it spits out. This is effective in ruling out corner cases.
